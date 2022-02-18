@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY - </title><meta name="description" content=""><meta property="og:title" content="HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY" />
+<meta property="og:description" content="Dependency inversion principle(DI principle)? Trước khi đi vào giải thích thì các bạn hãy xem ví dụ sau:
+1 2 3 4 5 6 7 8 9  class DaddyA{} class DaddyB{} class DaddyC{} class sugarBaby{ private DaddyA daddyA; public sugarBaby(){ daddyA=new DaddyA(); } }   Như các bạn đã biết sugarBaby mỗi tháng cần DaddyA chu cấp và bao bọc để có một cuộc sống mang hơi ấm “gia đình”." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-18T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY"/>
+<meta name="twitter:description" content="Dependency inversion principle(DI principle)? Trước khi đi vào giải thích thì các bạn hãy xem ví dụ sau:
+1 2 3 4 5 6 7 8 9  class DaddyA{} class DaddyB{} class DaddyC{} class sugarBaby{ private DaddyA daddyA; public sugarBaby(){ daddyA=new DaddyA(); } }   Như các bạn đã biết sugarBaby mỗi tháng cần DaddyA chu cấp và bao bọc để có một cuộc sống mang hơi ấm “gia đình”."/>
+<meta name="application-name" content="">
+<meta name="apple-mobile-web-app-title" content=""><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" /><link rel="prev" href="https://codethenaoday.github.io/posts/gioi-thieu-spring-boot/" /><link rel="next" href="https://codethenaoday.github.io/posts/inversion-of-control-ioc/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY",
+        "inLanguage": "vi",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/codethenaoday.github.io\/posts\/hieu-don-gian-ve-di-principle-qua-sugarbaby\/"
+        },"genre": "posts","wordcount":  347 ,
+        "url": "https:\/\/codethenaoday.github.io\/posts\/hieu-don-gian-ve-di-principle-qua-sugarbaby\/","datePublished": "2021-12-18T00:00:00+00:00","dateModified": "2021-12-18T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "codethenaoday"},"author": {
+                "@type": "Person",
+                "name": "codethenaoday"
+            },"description": ""
+    }
+    </script></head><body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://codethenaoday.github.io/images/about/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="https://codethenaoday.github.io/images/about/favicon_io/site.webmanifest">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title=""><span class="header-title-pre"><i class='fa fa-terminal'> </i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/" title="About me"> About me </a><a class="menu-item" href="/posts/" title="View my blogs"> Posts </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title=""><span class="header-title-pre"><i class='fa fa-terminal'> </i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/about/" title="About me">About me</a><a class="menu-item" href="/posts/" title="View my blogs">Posts</a><div class="menu-item"><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png"
+        data-srcset="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png, https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png 1.5x, https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png 2x"
+        data-sizes="auto"
+        alt="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png"
+        title="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="https://codethenaoday.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>codethenaoday</a></span></div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Dec 18, 2021">Dec 18, 2021</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;347 words</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;2 minutes</span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>Contents</span>
+                        <span><i class="details-icon fas fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#dependency-inversion-principledi-principle">Dependency inversion principle(DI principle)?</a></li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><h2 id="dependency-inversion-principledi-principle">Dependency inversion principle(DI principle)?</h2>
+<p>Trước khi đi vào giải thích thì các bạn hãy xem ví dụ sau:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">DaddyA</span><span class="o">{}</span>
+<span class="kd">class</span> <span class="nc">DaddyB</span><span class="o">{}</span>
+<span class="kd">class</span> <span class="nc">DaddyC</span><span class="o">{}</span>
+<span class="kd">class</span> <span class="nc">sugarBaby</span><span class="o">{</span>
+  <span class="kd">private</span> <span class="n">DaddyA</span> <span class="n">daddyA</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nf">sugarBaby</span><span class="o">(){</span>
+    <span class="n">daddyA</span><span class="o">=</span><span class="k">new</span> <span class="n">DaddyA</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Như các bạn đã biết <strong>sugarBaby</strong> mỗi tháng cần <strong>DaddyA</strong> chu cấp và bao bọc để có một cuộc sống mang hơi ấm “gia đình”. Lúc này <strong>DaddyA</strong> sẽ là <strong>dependency</strong> (phụ thuộc) của <strong>sugarBaby</strong>.</p>
+<p>Và đã là <strong>sugarBaby</strong> chuyên nghiệp rồi thì việc thay đổi nhiều daddy  thay đổi không khí “gia đình” là chuyện thường xuyên(bạn nào làm sugarbaby rồi thì confirm chỗ này giúp mình nhé). Nhưng như code trên các bạn có thể thấy sự phụ thuộc giữa <strong>sugarBaby</strong> và <strong>DaddyA</strong> là rất mạnh và việc thay đổi rất khó khăn. Và từ đây <strong>Dependency inversion principle</strong> ra đời để giải quyết cho vấn đề này :&gt;.</p>
+<p><strong>Dependency inversion principle</strong> có nghĩa là các class cấp cao không nên phụ thuộc vào các class thấp và cả hai nên phụ thuộc vào abstraction(trong OOP thường là dùng interface).</p>
+<p>Nghe có vẻ abstraction đúng không vậy chúng ta hãy trở lại với câu chuyện của cô sugarBaby kia nhé:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">SugarDaddy</span><span class="o">{</span> <span class="o">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DaddyA</span> <span class="kd">implements</span> <span class="n">Sugar</span> <span class="n">Daddy</span> <span class="o">{}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DaddyB</span> <span class="kd">implements</span> <span class="n">Sugar</span> <span class="n">Daddy</span> <span class="o">{}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Daddyc</span> <span class="kd">implements</span> <span class="n">Sugar</span> <span class="n">Daddy</span> <span class="o">{}</span>
+<span class="kd">class</span> <span class="nc">SugarBaby</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="n">Sugar</span> <span class="n">Daddy</span> <span class="n">daddy</span><span class="o">;</span>
+  <span class="kd">public</span> <span class="nf">SugarBaby</span> <span class="o">(</span><span class="n">Sugar</span> <span class="n">Daddy</span> <span class="n">daddy</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span> <span class="n">daddy</span> <span class="o">=</span> <span class="n">daddy</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">DaddyA</span> <span class="n">daddyA</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaddyA</span><span class="o">();</span>
+  <span class="n">DaddyA</span> <span class="n">daddyB</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaddyB</span><span class="o">();</span>
+  <span class="n">DaddyA</span> <span class="n">daddyC</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Daddyc</span><span class="o">();</span>
+
+  <span class="n">SugarBaby</span> <span class="n">baby</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SugarBaby</span> <span class="o">(</span><span class="n">daddyB</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Ok bây giờ <strong>SugarBaby</strong> và các daddy đều đã phụ thuộc vào <strong>interface SugarDaddy</strong> lúc này thì sự phụ thuộc giữa <strong>SugarBaby</strong> và <strong>DaddyA</strong> đã lỏng lẻo hơn nhiều. SugarBaby có thể nhận các daddy khác một cách dễ dàng chỉ cần tạo một daddy và implements <strong>SugarDaddy</strong> và Inject là ok.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg"
+        data-srcset="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg, https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg 1.5x, https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg 2x"
+        data-sizes="auto"
+        alt="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg"
+        title="Alt text" /></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-line"><div class="post-info-mod">
+                <span>Updated on Dec 18, 2021</span>
+            </div><div class="post-info-mod"></div>
+        </div><div class="post-info-share">
+            <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" data-title="HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/"><i class="fab fa-facebook-square fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/posts/gioi-thieu-spring-boot/" class="prev" rel="prev" title="GIỚI THIỆU SPRING BOOT"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/posts/inversion-of-control-ioc/" class="next" rel="next" title="INVERSION OF CONTROL (IoC)">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+</div><div id="comments" class="single-card"><div id="fb-root"></div>
+            <div
+                class="fb-comments"
+                data-href="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://codethenaoday.github.io">codethenaoday</a></span></div>
+</div>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"><script src="https://connect.facebook.net/vi/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=673370387004208&amp;autoLogAppEvents=1" defer></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/js/lightgallery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.1/sharer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"cd codethenaoday","id-2":"cd codethenaoday"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":null,"speed":null}};</script><script src="/js/theme.min.js"></script></body></html>

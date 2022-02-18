@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>CÁCH ĐẶT TÊN CÓ NGHĨA - </title><meta name="description" content=""><meta property="og:title" content="CÁCH ĐẶT TÊN CÓ NGHĨA" />
+<meta property="og:description" content="CÁCH ĐẶT TÊN CÓ NGHĨA Phần này sẽ nêu ra các quy tắc để chúng ta đặt được một cái tên cho các biến, các hàm các đối số, các lớp, các gói trong phần mềm của chúng ta một cách hoàn hảo. Nhiều bạn sẽ nghĩ “Ơ cái này thì dễ mà cần gì quy tắc làm gì cho mệt người ” vậy thì các bạn hãy nán lại đọc những quy tắc sau đây bạn sẽ có một suy nghĩ khác về cách đặt tên." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://codethenaoday.github.io/posts/cach-dat-ten-co-nghia/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-17T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CÁCH ĐẶT TÊN CÓ NGHĨA"/>
+<meta name="twitter:description" content="CÁCH ĐẶT TÊN CÓ NGHĨA Phần này sẽ nêu ra các quy tắc để chúng ta đặt được một cái tên cho các biến, các hàm các đối số, các lớp, các gói trong phần mềm của chúng ta một cách hoàn hảo. Nhiều bạn sẽ nghĩ “Ơ cái này thì dễ mà cần gì quy tắc làm gì cho mệt người ” vậy thì các bạn hãy nán lại đọc những quy tắc sau đây bạn sẽ có một suy nghĩ khác về cách đặt tên."/>
+<meta name="application-name" content="">
+<meta name="apple-mobile-web-app-title" content=""><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://codethenaoday.github.io/posts/cach-dat-ten-co-nghia/" /><link rel="prev" href="https://codethenaoday.github.io/posts/gioi-thieu-clean-code/" /><link rel="next" href="https://codethenaoday.github.io/posts/gioi-thieu-spring-boot/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "CÁCH ĐẶT TÊN CÓ NGHĨA",
+        "inLanguage": "vi",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/codethenaoday.github.io\/posts\/cach-dat-ten-co-nghia\/"
+        },"genre": "posts","wordcount":  859 ,
+        "url": "https:\/\/codethenaoday.github.io\/posts\/cach-dat-ten-co-nghia\/","datePublished": "2021-10-17T00:00:00+00:00","dateModified": "2021-10-17T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "codethenaoday"},"author": {
+                "@type": "Person",
+                "name": "codethenaoday"
+            },"description": ""
+    }
+    </script></head><body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://codethenaoday.github.io/images/about/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="https://codethenaoday.github.io/images/about/favicon_io/site.webmanifest">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title=""><span class="header-title-pre"><i class='fa fa-terminal'> </i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/" title="About me"> About me </a><a class="menu-item" href="/posts/" title="View my blogs"> Posts </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title=""><span class="header-title-pre"><i class='fa fa-terminal'> </i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/about/" title="About me">About me</a><a class="menu-item" href="/posts/" title="View my blogs">Posts</a><div class="menu-item"><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/featuredImage.png"
+        data-srcset="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/featuredImage.png, https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/featuredImage.png 1.5x, https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/featuredImage.png 2x"
+        data-sizes="auto"
+        alt="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/featuredImage.png"
+        title="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/featuredImage.png" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">CÁCH ĐẶT TÊN CÓ NGHĨA</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="https://codethenaoday.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>codethenaoday</a></span></div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Oct 17, 2021">Oct 17, 2021</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;859 words</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;5 minutes</span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>Contents</span>
+                        <span><i class="details-icon fas fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#cách-đặt-tên-có-nghĩa">CÁCH ĐẶT TÊN CÓ NGHĨA</a>
+      <ul>
+        <li><a href="#tên-phải-thể-hiện-được-mục-đích">Tên phải thể hiện được mục đích</a></li>
+        <li><a href="#dùng-những-tên-phát-âm--được">Dùng những tên phát âm  được</a></li>
+        <li><a href="#dùng-những-tên-tìm-kiếm-được">Dùng những tên tìm kiếm được</a></li>
+        <li><a href="#tên-lớp">Tên lớp</a></li>
+        <li><a href="#tên-các-phương-thức">Tên các phương thức</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><h2 id="cách-đặt-tên-có-nghĩa">CÁCH ĐẶT TÊN CÓ NGHĨA</h2>
+<p>Phần này sẽ nêu ra các quy tắc để chúng ta đặt được một cái tên cho các biến, các hàm các đối số, các lớp, các gói trong phần mềm của chúng ta một cách hoàn hảo. Nhiều bạn sẽ nghĩ  “Ơ cái này thì dễ mà cần gì quy tắc làm gì cho mệt người ” vậy thì các bạn hãy nán lại đọc những quy tắc sau đây bạn sẽ có một suy nghĩ khác về cách đặt tên.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-1.png"
+        data-srcset="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-1.png, https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-1.png 1.5x, https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-1.png 2x"
+        data-sizes="auto"
+        alt="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-1.png"
+        title="Alt" /></p>
+<ul>
+<li>Dùng những cái tên thể hiện được mục đích.</li>
+<li>Tránh sai lệch thông tin.</li>
+<li>Tạo sự khác biệt rõ ràng.</li>
+<li>Dùng những tên phát âm được.</li>
+<li>Dùng những tên tìm kiếm được.</li>
+<li>Tránh việc mã hóa.</li>
+<li>Tránh “Hack não” người đọc.</li>
+<li>Tên lớp phải sử dụng danh từ</li>
+<li>Tên phương thức phải có động từ.</li>
+<li>Đừng thể hiện cá tính của mình vào tên.</li>
+<li>Chọn một từ cho mỗi khái niệm.</li>
+<li>Đừng chơi chữ.</li>
+<li>Dùng thuật ngữ chuyên ngành nếu cần và liên quan.</li>
+<li>Thêm ngữ cảnh thích hợp.</li>
+</ul>
+<p>Đấy bạn xem để được một cái tên hoàn hảo thôi mà có rất nhiều quy tắc nó không đơn giản như bạn nghĩ đâu nó cũng như việc đặt tên cho một em bé mới sinh ra vậy.</p>
+<p>Và trong các quy tắc trên nếu bạn là newbie mới tìm hiểu giống mình thì mình khuyên thì mình nghĩ nên nắm chắc một số quy tắc sau trước:</p>
+<h3 id="tên-phải-thể-hiện-được-mục-đích">Tên phải thể hiện được mục đích</h3>
+<p>Mỗi cái tên sinh ra đã quy định nó làm nhiệm vụ gì rồi, các bạn thử nhìn các từ khóa của các ngôn ngữ xem có bao giờ từ khóa đó không toát lên được nhiệm vụ của nó không.</p>
+<p>Cái tên mà thế hiện được mục đích có thể làm cho việc hiểu và thay đổi code dễ dàng. Giả sử chúng tôi đang làm game dò mìn.Giao diện trò chơi là một danh sách các ô vuông. Mỗi ô trên màn hình được biểu diễn bằng một danh sách đơn giản. Chỉ số của số 0 là vị trí biểu diễn giá trị trạng thái (status value), và giá trị 4 nghĩa là trạng thái được gắn cờ (flagged).</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-2.png"
+        data-srcset="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-2.png, https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-2.png 1.5x, https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-2.png 2x"
+        data-sizes="auto"
+        alt="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-2.png"
+        title="Alt" /></p>
+<p>Đây là đoạn code cho bài toán trên:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span> <span class="nf">getThem</span><span class="o">(){</span>
+  <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span> <span class="n">list1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;();</span>
+  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">x</span> <span class="o">:</span> <span class="n">theList</span><span class="o">)</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">x</span><span class="o">[</span><span class="n">0</span><span class="o">]</span> <span class="o">==</span> <span class="n">4</span><span class="o">)</span>
+      <span class="n">list1</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">x</span><span class="o">);</span>
+  <span class="k">return</span> <span class="n">list1</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Nếu bạn đọc cái hàm trên mà không đọc bài toán bạn có hình dung được mục đích của nó là gì ? Chắc chắn là không hiểu rồi đúng không. Mặc dù đoạn code trên rất đơn giản không có sử dụng cái gì quá cao siêu cả.Vấn đề ở đây là nằm ở ý nghĩa của code, bối cảnh không rõ ràng. Nó sẽ cho chúng ta hàng loạt các nghi vấn trong đầu:</p>
+<ul>
+<li>theList chứa cái gì?</li>
+<li>Ý nghĩa của chỉ số 0 trong phần tử của theList?</li>
+<li>số 4 có ý nghĩa gì?</li>
+<li>Danh sách được return dùng kiểu gì?</li>
+</ul>
+<p>Và bây giờ chúng ta sẽ cải thiện lại để có thể hiểu được</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span> <span class="nf">getFlaggedCells</span><span class="o">(){</span>
+  <span class="n">List</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;</span> <span class="n">FlaggedCells</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ArrayList</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">[]&gt;();</span>
+  <span class="k">for</span> <span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">cell</span> <span class="o">:</span> <span class="n">theList</span><span class="o">)</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">x</span><span class="o">[</span><span class="n">STATUS_VALUE</span><span class="o">]</span> <span class="o">==</span> <span class="n">FLAGGED</span><span class="o">)</span>
+      <span class="n">flaggedCells</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">cell</span><span class="o">);</span>
+  <span class="k">return</span> <span class="n">flaggedCells</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Đấy chúng ta chỉ cần đặt lại tên thôi đọc đã khác bọt hẳn.</p>
+<h3 id="dùng-những-tên-phát-âm--được">Dùng những tên phát âm  được</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-3.png"
+        data-srcset="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-3.png, https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-3.png 1.5x, https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-3.png 2x"
+        data-sizes="auto"
+        alt="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-3.png"
+        title="Alt" /></p>
+<p>Tất nhiên khi bạn đặt tên bạn cần phải có cái tên làm sao có thể phát âm được để khi trao đổi với mọi người về code có thể đọc được nó chứ bạn đặt một cái tên không phát âm được thì chả khác nào bạn đang nói một ngôn ngoài hành tinh xì xà xì xồ.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">DtaRcrd102</span><span class="o">{</span>
+  <span class="kd">private</span> <span class="n">Date</span> <span class="n">genymdhms</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">Date</span> <span class="n">modymdhms</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">pszqint</span> <span class="o">=</span><span class="s">&#34;102&#34;</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kd">class</span> <span class="nc">Customer</span><span class="o">{</span>
+  <span class="kd">private</span> <span class="n">Date</span> <span class="n">generationTimestamp</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="n">Date</span> <span class="n">modificationTimestamp</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">recordTd</span> <span class="o">=</span><span class="s">&#34;102&#34;</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="dùng-những-tên-tìm-kiếm-được">Dùng những tên tìm kiếm được</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-4.png"
+        data-srcset="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-4.png, https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-4.png 1.5x, https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-4.png 2x"
+        data-sizes="auto"
+        alt="https://codethenaoday.github.io/images/cach-dat-ten-co-nghia/hinh-4.png"
+        title="Alt" /></p>
+<p>Các hằng số luôn có vấn đề chúng ta hay sử dụng lại nó và rất khó trong việc tìm kiếm trong trong cả một dự án. Ta nên đặt chúng thành một biến dễ dàng trong việc tìm kiếm và có thế sử dụng nhiều lần.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="kt">int</span> <span class="n">realDaysPerIdealDay</span> <span class="o">=</span> <span class="n">4</span><span class="o">;</span>
+<span class="kd">const</span> <span class="kt">int</span> <span class="n">WORK_DAY_PER_WEEK</span> <span class="o">=</span> <span class="n">5</span><span class="o">;</span>
+<span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+<span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">NUMBER_OF_TASKS</span><span class="o">;</span> <span class="n">j</span><span class="o">++){</span>
+  <span class="kt">int</span> <span class="n">realTaskDays</span> <span class="o">=</span> <span class="n">taskEstimate</span><span class="o">[</span><span class="n">j</span><span class="o">]</span> <span class="o">*</span> <span class="n">realDaysPerIdealDay</span><span class="o">;</span>
+  <span class="kt">int</span> <span class="n">realTaskWeeks</span> <span class="o">=</span> <span class="o">(</span><span class="n">realDays</span> <span class="o">/</span> <span class="n">WORK_DAY_PER_WEEK</span><span class="o">);</span>
+  <span class="n">sum</span> <span class="o">+=</span> <span class="n">realTaskWeeks</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="tên-lớp">Tên lớp</h3>
+<p>Tên lớp và các đối tượng nên sử dụng các danh từ và cụm danh từ liên quan đến đối tượng đó như <strong>Customer, WikiPage, Account,AddressParser</strong>. Tránh những từ như **Manager, Processor, Data, Info **trong tên của một lớp. Tên lớp không nên dùng động từ.</p>
+<h3 id="tên-các-phương-thức">Tên các phương thức</h3>
+<p>Tên các phương thức nên có động từ hoặc cụm động từ như <strong>postPayment, deletePage, save</strong>. Các phương thức truy cập, chỉnh sửa thuộc tính phải được đặt tên cùng với <strong>get, set, is</strong> theo tiêu chuẩn của <a href="https://qastack.vn/programming/3295496/what-is-a-javabean-exactly" target="_blank" rel="noopener noreffer">Javabean </a>.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-line"><div class="post-info-mod">
+                <span>Updated on Oct 17, 2021</span>
+            </div><div class="post-info-mod"></div>
+        </div><div class="post-info-share">
+            <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://codethenaoday.github.io/posts/cach-dat-ten-co-nghia/" data-title="CÁCH ĐẶT TÊN CÓ NGHĨA"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://codethenaoday.github.io/posts/cach-dat-ten-co-nghia/"><i class="fab fa-facebook-square fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/posts/gioi-thieu-clean-code/" class="prev" rel="prev" title="GIỚI THIỆU CLEAN CODE"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/posts/gioi-thieu-spring-boot/" class="next" rel="next" title="GIỚI THIỆU SPRING BOOT">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+</div><div id="comments" class="single-card"><div id="fb-root"></div>
+            <div
+                class="fb-comments"
+                data-href="https://codethenaoday.github.io/posts/cach-dat-ten-co-nghia/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://codethenaoday.github.io">codethenaoday</a></span></div>
+</div>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"><script src="https://connect.facebook.net/vi/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=673370387004208&amp;autoLogAppEvents=1" defer></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/js/lightgallery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.1/sharer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"cd codethenaoday","id-2":"cd codethenaoday"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":null,"speed":null}};</script><script src="/js/theme.min.js"></script></body></html>

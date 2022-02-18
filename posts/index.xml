@@ -1,0 +1,66 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - </title>
+        <link>https://codethenaoday.github.io/posts/</link>
+        <description>All Posts | </description>
+        <generator>Hugo -- gohugo.io</generator><language>vi</language><lastBuildDate>Fri, 31 Dec 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://codethenaoday.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>CON GÁI VỚI IT</title>
+    <link>https://codethenaoday.github.io/posts/con-gai-voi-it/</link>
+    <pubDate>Fri, 31 Dec 2021 00:00:00 &#43;0000</pubDate><guid>https://codethenaoday.github.io/posts/con-gai-voi-it/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/con-gai-voi-it/featuredImage.jpg" referrerpolicy="no-referrer">
+            </div>Tại sao tôi lại viết bài này? Ngành công nghệ thông tin được cho là một ngành “Dương thịnh Âm suy”. Đa số bạn nữ thường có xu hướng ngần ngại khi chọn ngành này thậm chí còn không tìm hiểu ngành này như thế nào. Trên các diễn đàn, trang về công nghệ hay trong các buổi tuyển sinh của các trường sẽ thường gặp rất nhiều câu hỏi: “Con gái có học Công nghệ Thông tin (IT) có hợp không?]]></description>
+</item>
+<item>
+    <title>INVERSION OF CONTROL (IoC)</title>
+    <link>https://codethenaoday.github.io/posts/inversion-of-control-ioc/</link>
+    <pubDate>Sun, 19 Dec 2021 00:00:00 &#43;0000</pubDate><guid>https://codethenaoday.github.io/posts/inversion-of-control-ioc/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/inversion-of-control-ioc/featuredImage.jfif" referrerpolicy="no-referrer">
+            </div>INVERSION OF CONTROL (IoC) Ở bài trước chúng ta đã giải quyết được vấn đề các module liên kết chặt chẽ với nhau khó sửa đổi rồi. Nhưng lại nảy sinh ra một vấn đề nữa là một chương trình đâu chỉ có một module mà còn có rất nhiều module khác cần inject nữa (cuộc sống SugarBaby đâu chỉ cần mỗi daddy đúng không nào). Nghĩ đến cảnh một module có hàng tá dependency mà bạn phải tự inject từng cái đã mệt rồi , quản lý code lúc này càng mệt hơn.]]></description>
+</item>
+<item>
+    <title>HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY</title>
+    <link>https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/</link>
+    <pubDate>Sat, 18 Dec 2021 00:00:00 &#43;0000</pubDate><guid>https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png" referrerpolicy="no-referrer">
+            </div>Dependency inversion principle(DI principle)? Trước khi đi vào giải thích thì các bạn hãy xem ví dụ sau:
+1 2 3 4 5 6 7 8 9  class DaddyA{} class DaddyB{} class DaddyC{} class sugarBaby{ private DaddyA daddyA; public sugarBaby(){ daddyA=new DaddyA(); } }   Như các bạn đã biết sugarBaby mỗi tháng cần DaddyA chu cấp và bao bọc để có một cuộc sống mang hơi ấm “gia đình”.]]></description>
+</item>
+<item>
+    <title>GIỚI THIỆU SPRING BOOT</title>
+    <link>https://codethenaoday.github.io/posts/gioi-thieu-spring-boot/</link>
+    <pubDate>Sun, 12 Dec 2021 00:00:00 &#43;0000</pubDate><guid>https://codethenaoday.github.io/posts/gioi-thieu-spring-boot/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/gioi-thieu-spring-boot/featuredImage.png" referrerpolicy="no-referrer">
+            </div>Spring Boot là gì ? Spring framework là một framework của java nó được chia thành nhiều module, mỗi module làm một chức năng, ví dụ Spring Core, Web, Data access, AOP,… Spring được xây dựng dựa trên 2 khái niệm nền tảng là Dependency injection và AOP (Aspect Oriented Programming).
+Spring Boot là một module của Spring Framework, cung cấp tính năng RAD (Rapid Application Development) – Phát triển ứng dụng nhanh.]]></description>
+</item>
+<item>
+    <title>CÁCH ĐẶT TÊN CÓ NGHĨA</title>
+    <link>https://codethenaoday.github.io/posts/cach-dat-ten-co-nghia/</link>
+    <pubDate>Sun, 17 Oct 2021 00:00:00 &#43;0000</pubDate><guid>https://codethenaoday.github.io/posts/cach-dat-ten-co-nghia/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/cach-dat-ten-co-nghia/featuredImage.png" referrerpolicy="no-referrer">
+            </div>CÁCH ĐẶT TÊN CÓ NGHĨA Phần này sẽ nêu ra các quy tắc để chúng ta đặt được một cái tên cho các biến, các hàm các đối số, các lớp, các gói trong phần mềm của chúng ta một cách hoàn hảo. Nhiều bạn sẽ nghĩ “Ơ cái này thì dễ mà cần gì quy tắc làm gì cho mệt người ” vậy thì các bạn hãy nán lại đọc những quy tắc sau đây bạn sẽ có một suy nghĩ khác về cách đặt tên.]]></description>
+</item>
+<item>
+    <title>GIỚI THIỆU CLEAN CODE</title>
+    <link>https://codethenaoday.github.io/posts/gioi-thieu-clean-code/</link>
+    <pubDate>Sat, 16 Oct 2021 00:00:00 &#43;0000</pubDate><guid>https://codethenaoday.github.io/posts/gioi-thieu-clean-code/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/gioi-thieu-clean-code/featuredImage.jfif" referrerpolicy="no-referrer">
+            </div>Lý do tôi biết đến CLEAN CODE Sau khi đọc review sách Clean Code: A Handbook of Agile Software Craftsmanship của tác giả Robert C.Martin Blog tại blog toidicodedao mình bắt cũng bắt đầu tìm hiểu và đọc cuốn sách này và học các để biết code nào là “xịn” code nào là “rởm”.Và trong series này mình sẽ chia sẻ tóm tắt những gì mình đọc và học được từ cuốn sách này .]]></description>
+</item>
+<item>
+    <title>TÌM HIỂU VỀ LẬP TRÌNH OOP</title>
+    <link>https://codethenaoday.github.io/posts/tim-hieu-ve-lap-trinh-oop/</link>
+    <pubDate>Fri, 15 Oct 2021 00:00:00 &#43;0000</pubDate><guid>https://codethenaoday.github.io/posts/tim-hieu-ve-lap-trinh-oop/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/tim-hieu-ve-oop/tim-hieu-ve-oop-featuredImage.jpg" referrerpolicy="no-referrer">
+            </div>1. Lập trình hướng đối tượng (object oriented programming - OOP) là gì? OOP là một kỹ thuật lập trình tạo ra các đối tượng chứa các thuộc tính và phương thức trừu tượng hóa các đối tượng trong thực tế.
+Đối tượng Đối tượng là một đơn vị cơ bản của Lập trình hướng đối tượng và đại diện cho các thực thể trong cuộc sống thực một đối tượng gồm các thuộc tính và phương thức.]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>TÌM HIỂU VỀ LẬP TRÌNH OOP - </title><meta name="description" content=""><meta property="og:title" content="TÌM HIỂU VỀ LẬP TRÌNH OOP" />
+<meta property="og:description" content="1. Lập trình hướng đối tượng (object oriented programming - OOP) là gì? OOP là một kỹ thuật lập trình tạo ra các đối tượng chứa các thuộc tính và phương thức trừu tượng hóa các đối tượng trong thực tế.
+Đối tượng Đối tượng là một đơn vị cơ bản của Lập trình hướng đối tượng và đại diện cho các thực thể trong cuộc sống thực một đối tượng gồm các thuộc tính và phương thức." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://codethenaoday.github.io/posts/tim-hieu-ve-lap-trinh-oop/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-10-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-10-15T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TÌM HIỂU VỀ LẬP TRÌNH OOP"/>
+<meta name="twitter:description" content="1. Lập trình hướng đối tượng (object oriented programming - OOP) là gì? OOP là một kỹ thuật lập trình tạo ra các đối tượng chứa các thuộc tính và phương thức trừu tượng hóa các đối tượng trong thực tế.
+Đối tượng Đối tượng là một đơn vị cơ bản của Lập trình hướng đối tượng và đại diện cho các thực thể trong cuộc sống thực một đối tượng gồm các thuộc tính và phương thức."/>
+<meta name="application-name" content="">
+<meta name="apple-mobile-web-app-title" content=""><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://codethenaoday.github.io/posts/tim-hieu-ve-lap-trinh-oop/" /><link rel="next" href="https://codethenaoday.github.io/posts/gioi-thieu-clean-code/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "TÌM HIỂU VỀ LẬP TRÌNH OOP",
+        "inLanguage": "vi",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/codethenaoday.github.io\/posts\/tim-hieu-ve-lap-trinh-oop\/"
+        },"genre": "posts","wordcount":  1104 ,
+        "url": "https:\/\/codethenaoday.github.io\/posts\/tim-hieu-ve-lap-trinh-oop\/","datePublished": "2021-10-15T00:00:00+00:00","dateModified": "2021-10-15T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "codethenaoday"},"author": {
+                "@type": "Person",
+                "name": "codethenaoday"
+            },"description": ""
+    }
+    </script></head><body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://codethenaoday.github.io/images/about/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="https://codethenaoday.github.io/images/about/favicon_io/site.webmanifest">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title=""><span class="header-title-pre"><i class='fa fa-terminal'> </i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/" title="About me"> About me </a><a class="menu-item" href="/posts/" title="View my blogs"> Posts </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title=""><span class="header-title-pre"><i class='fa fa-terminal'> </i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/about/" title="About me">About me</a><a class="menu-item" href="/posts/" title="View my blogs">Posts</a><div class="menu-item"><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://codethenaoday.github.io/images/tim-hieu-ve-oop/tim-hieu-ve-oop-featuredImage.jpg"
+        data-srcset="https://codethenaoday.github.io/images/tim-hieu-ve-oop/tim-hieu-ve-oop-featuredImage.jpg, https://codethenaoday.github.io/images/tim-hieu-ve-oop/tim-hieu-ve-oop-featuredImage.jpg 1.5x, https://codethenaoday.github.io/images/tim-hieu-ve-oop/tim-hieu-ve-oop-featuredImage.jpg 2x"
+        data-sizes="auto"
+        alt="https://codethenaoday.github.io/images/tim-hieu-ve-oop/tim-hieu-ve-oop-featuredImage.jpg"
+        title="https://codethenaoday.github.io/images/tim-hieu-ve-oop/tim-hieu-ve-oop-featuredImage.jpg" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">TÌM HIỂU VỀ LẬP TRÌNH OOP</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="https://codethenaoday.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>codethenaoday</a></span></div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Oct 15, 2021">Oct 15, 2021</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1104 words</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;6 minutes</span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>Contents</span>
+                        <span><i class="details-icon fas fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-lập-trình-hướng-đối-tượng-object-oriented-programming---oop-là-gì">1. Lập trình hướng đối tượng (object oriented programming - OOP) là gì?</a>
+      <ul>
+        <li><a href="#đối-tượng">Đối tượng</a></li>
+        <li><a href="#thuộc-tính">Thuộc tính</a></li>
+        <li><a href="#phương-thức">Phương thức</a></li>
+        <li><a href="#lớp">Lớp</a></li>
+        <li><a href="#sự-khác-nhau-giữa-đối-tượng-và-lớp">Sự khác nhau giữa đối tượng và lớp</a></li>
+      </ul>
+    </li>
+    <li><a href="#2-các-thuộc-tính-cơ-bản-của-oop">2. Các thuộc tính cơ bản của OOP</a>
+      <ul>
+        <li><a href="#tính-trừu-tượng-abstraction">Tính trừu tượng (Abstraction)</a></li>
+        <li><a href="#tính-đóng-gói-encapsulation">Tính đóng gói (Encapsulation)</a></li>
+        <li><a href="#tính-kế-thừa-inheritance">Tính kế thừa (Inheritance)</a></li>
+        <li><a href="#tính-đa-hình-polymorphism">Tính đa hình (Polymorphism)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><h2 id="1-lập-trình-hướng-đối-tượng-object-oriented-programming---oop-là-gì">1. Lập trình hướng đối tượng (object oriented programming - OOP) là gì?</h2>
+<p>OOP là một kỹ thuật lập trình tạo ra các đối tượng chứa các thuộc tính và phương thức trừu tượng hóa các đối tượng trong thực tế.</p>
+<h3 id="đối-tượng">Đối tượng</h3>
+<p>Đối tượng là một đơn vị cơ bản của Lập trình hướng đối tượng và đại diện cho các thực thể trong cuộc sống thực một đối tượng gồm các thuộc tính và phương thức.</p>
+<h3 id="thuộc-tính">Thuộc tính</h3>
+<p>Thuộc tính là những thông tin, đặc điểm của đối tượng. Ví dụ: con mèo có mắt, mũi, chân, đuôi…</p>
+<h3 id="phương-thức">Phương thức</h3>
+<p>Phương thức là những thao tác, hành động mà đối tượng đó có thể thực hiện. Ví dụ: một con mèo có thể kêu, chạy, ăn, uống…
+Ví dụ trong thực tế thì một cái ô tô là một đối tượng có các thuộc tính: màu đỏ, hãng Vinfast,..có các phương thức: chạy, tăng tốc, bật đèn,&hellip;</p>
+<h3 id="lớp">Lớp</h3>
+<p>Một lớp là một bản thiết kế hoặc nguyên mẫu do người dùng xác định mà từ đó các đối tượng được tạo ra. Nó đại diện cho tập hợp các thuộc tính hoặc phương thức chung cho tất cả các đối tượng của một kiểu.</p>
+<h3 id="sự-khác-nhau-giữa-đối-tượng-và-lớp">Sự khác nhau giữa đối tượng và lớp</h3>
+<p><strong>Lớp</strong> - có thể hiểu nó như là khuôn mẫu, đối tượng - một thực thể thể hiện dựa trên khuôn mẫu đó.</p>
+<blockquote>
+<p>Ví dụ: lại nói về chó, có thể hiểu là class (lớp) chó có:
+Các thông tin, đặc điểm: 4 chân, 2 mắt, có đuôi, có chiều cao, có cân nặng, màu lông…
+Các hành động như: kêu, đi, ăn, ngủ…
+<strong>Đối tượng</strong> thì chính là con chó vàng ta đang nuôi trong nhà cũng mang đặc tính của lớp chó.</p>
+</blockquote>
+<h2 id="2-các-thuộc-tính-cơ-bản-của-oop">2. Các thuộc tính cơ bản của OOP</h2>
+<h3 id="tính-trừu-tượng-abstraction">Tính trừu tượng (Abstraction)</h3>
+<ul>
+<li><strong>Trừu tượng</strong> là thuộc tính mà chỉ những chi tiết thiết yếu mới được hiển thị cho người dùng. Các đơn vị nhỏ hoặc không cần thiết sẽ không được hiển thị cho người dùng. Ví dụ: Một chiếc xe hơi được xem như một chiếc xe hơi hơn là các thành phần riêng lẻ của nó.\</li>
+<li><strong>Trừu tượng hóa dữ liệu</strong> cũng có thể được định nghĩa là quá trình chỉ xác định các đặc điểm cần thiết của một đối tượng bỏ qua các chi tiết không liên quan. Các thuộc tính và hành vi của một đối tượng phân biệt nó với các đối tượng khác cùng loại và cũng giúp phân loại / nhóm các đối tượng.</li>
+</ul>
+<blockquote>
+<p>Hãy xem xét một ví dụ thực tế về một người đàn ông lái xe ô tô. Người đàn ông chỉ biết rằng nhấn ga sẽ tăng tốc độ xe hoặc nhấn phanh sẽ dừng xe nhưng anh ta không biết về cách nhấn ga, tốc độ thực sự tăng lên như thế nào, anh ta không biết về cơ cấu bên trong của ô tô hay việc thực hiện chân ga, phanh, vv trên ô tô. Đây là những gì trừu tượng.</p>
+</blockquote>
+<h3 id="tính-đóng-gói-encapsulation">Tính đóng gói (Encapsulation)</h3>
+<p>Nó được định nghĩa là gói dữ liệu dưới một đơn vị duy nhất. Đó là cơ chế liên kết mã và dữ liệu mà nó thao tác với nhau. Một cách khác để nghĩ về tính đóng gói là, nó là một lá chắn bảo vệ ngăn không cho dữ liệu bị truy cập bởi mã bên ngoài lá chắn này.<br>
+Về mặt kỹ thuật trong đóng gói, các biến hoặc dữ liệu của một lớp được ẩn khỏi bất kỳ lớp nào khác và chỉ có thể được truy cập thông qua bất kỳ hàm thành viên nào của lớp riêng mà chúng được khai báo.<br>
+Như trong đóng gói, dữ liệu trong một lớp bị ẩn khỏi các lớp khác, vì vậy nó còn được gọi là ẩn dữ liệu .
+Việc đóng gói có thể đạt được bằng cách Khai báo tất cả các biến trong lớp là private và viết các phương thức public trong lớp để thiết lập và lấy giá trị của các biến.</p>
+<h3 id="tính-kế-thừa-inheritance">Tính kế thừa (Inheritance)</h3>
+<ul>
+<li><strong>Kế thừa</strong> là một trụ cột quan trọng của OOP (Lập trình hướng đối tượng). Đó là cơ chế trong java mà một lớp được phép kế thừa các tính năng (trường và phương thức) của lớp khác. Hãy để chúng tôi thảo luận về một số thuật ngữ quan trọng được sử dụng thường xuyên:</li>
+<li><strong>Lớp siêu cấp</strong>: Lớp có các tính năng được kế thừa được gọi là lớp cha (hoặc lớp cơ sở hoặc lớp cha).</li>
+<li><strong>Lớp con</strong>: Lớp kế thừa lớp khác được gọi là lớp con (hoặc lớp dẫn xuất, lớp mở rộng hoặc lớp con). Lớp con có thể thêm các trường và phương thức của riêng nó ngoài các trường và phương thức của lớp cha.</li>
+<li><strong>Khả năng tái sử dụng</strong>: Tính kế thừa hỗ trợ khái niệm “khả năng tái sử dụng”, tức là khi chúng ta muốn tạo một lớp mới và đã có một lớp bao gồm một số mã mà chúng ta muốn, chúng ta có thể lấy lớp mới của mình từ lớp hiện có. Bằng cách này, chúng tôi đang sử dụng lại các trường và phương thức của lớp hiện có.</li>
+</ul>
+<h3 id="tính-đa-hình-polymorphism">Tính đa hình (Polymorphism)</h3>
+<p>Nó đề cập đến khả năng của các ngôn ngữ lập trình OOP để phân biệt giữa các thực thể có cùng tên một cách hiệu quả. Điều này được thực hiện bởi Java với sự trợ giúp của chữ ký và khai báo của các thực thể này. Có 2 loại đa hình chủ yếu</p>
+<ul>
+<li><strong>Overloading</strong>: cho phép các phương thức khác nhau có cùng tên, nhưng chữ ký khác nhau trong đó chữ ký có thể khác nhau bởi số lượng tham số đầu vào hoặc loại tham số đầu vào hoặc cả hai. Quá tải có liên quan đến tính đa hình thời gian biên dịch (hoặc tĩnh).</li>
+<li><strong>Overriding</strong>: Trong bất kỳ ngôn ngữ lập trình hướng đối tượng nào, Ghi đè là một tính năng cho phép một lớp con hoặc lớp con cung cấp một triển khai cụ thể của một phương thức đã được cung cấp bởi một trong các siêu lớp hoặc lớp cha của nó. Khi một phương thức trong lớp con có cùng tên, cùng tham số hoặc chữ ký và cùng kiểu trả về (hoặc kiểu con) như một phương thức trong lớp siêu của nó, thì phương thức trong lớp con được cho là ghi đè phương thức trong lớp siêu</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-line"><div class="post-info-mod">
+                <span>Updated on Oct 15, 2021</span>
+            </div><div class="post-info-mod"></div>
+        </div><div class="post-info-share">
+            <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://codethenaoday.github.io/posts/tim-hieu-ve-lap-trinh-oop/" data-title="TÌM HIỂU VỀ LẬP TRÌNH OOP"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://codethenaoday.github.io/posts/tim-hieu-ve-lap-trinh-oop/"><i class="fab fa-facebook-square fa-fw"></i></a></span>
+        </div></div><div class="post-nav">
+            <a href="/posts/gioi-thieu-clean-code/" class="next" rel="next" title="GIỚI THIỆU CLEAN CODE">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+</div><div id="comments" class="single-card"><div id="fb-root"></div>
+            <div
+                class="fb-comments"
+                data-href="https://codethenaoday.github.io/posts/tim-hieu-ve-lap-trinh-oop/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://codethenaoday.github.io">codethenaoday</a></span></div>
+</div>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"><script src="https://connect.facebook.net/vi/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=673370387004208&amp;autoLogAppEvents=1" defer></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/js/lightgallery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.1/sharer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"cd codethenaoday","id-2":"cd codethenaoday"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":null,"speed":null}};</script><script src="/js/theme.min.js"></script></body></html>

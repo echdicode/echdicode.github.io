@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>INVERSION OF CONTROL (IoC) - </title><meta name="description" content=""><meta property="og:title" content="INVERSION OF CONTROL (IoC)" />
+<meta property="og:description" content="INVERSION OF CONTROL (IoC) Ở bài trước chúng ta đã giải quyết được vấn đề các module liên kết chặt chẽ với nhau khó sửa đổi rồi. Nhưng lại nảy sinh ra một vấn đề nữa là một chương trình đâu chỉ có một module mà còn có rất nhiều module khác cần inject nữa (cuộc sống SugarBaby đâu chỉ cần mỗi daddy đúng không nào). Nghĩ đến cảnh một module có hàng tá dependency mà bạn phải tự inject từng cái đã mệt rồi , quản lý code lúc này càng mệt hơn." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://codethenaoday.github.io/posts/inversion-of-control-ioc/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-12-19T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-12-18T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="INVERSION OF CONTROL (IoC)"/>
+<meta name="twitter:description" content="INVERSION OF CONTROL (IoC) Ở bài trước chúng ta đã giải quyết được vấn đề các module liên kết chặt chẽ với nhau khó sửa đổi rồi. Nhưng lại nảy sinh ra một vấn đề nữa là một chương trình đâu chỉ có một module mà còn có rất nhiều module khác cần inject nữa (cuộc sống SugarBaby đâu chỉ cần mỗi daddy đúng không nào). Nghĩ đến cảnh một module có hàng tá dependency mà bạn phải tự inject từng cái đã mệt rồi , quản lý code lúc này càng mệt hơn."/>
+<meta name="application-name" content="">
+<meta name="apple-mobile-web-app-title" content=""><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://codethenaoday.github.io/posts/inversion-of-control-ioc/" /><link rel="prev" href="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" /><link rel="next" href="https://codethenaoday.github.io/posts/con-gai-voi-it/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "INVERSION OF CONTROL (IoC)",
+        "inLanguage": "vi",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/codethenaoday.github.io\/posts\/inversion-of-control-ioc\/"
+        },"genre": "posts","wordcount":  445 ,
+        "url": "https:\/\/codethenaoday.github.io\/posts\/inversion-of-control-ioc\/","datePublished": "2021-12-19T00:00:00+00:00","dateModified": "2021-12-18T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "codethenaoday"},"author": {
+                "@type": "Person",
+                "name": "codethenaoday"
+            },"description": ""
+    }
+    </script></head><body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://codethenaoday.github.io/images/about/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="https://codethenaoday.github.io/images/about/favicon_io/site.webmanifest">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title=""><span class="header-title-pre"><i class='fa fa-terminal'> </i> </span><span id="id-1" class="typeit"></span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/" title="About me"> About me </a><a class="menu-item" href="/posts/" title="View my blogs"> Posts </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title=""><span class="header-title-pre"><i class='fa fa-terminal'> </i> </span><span id="id-2" class="typeit"></span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/about/" title="About me">About me</a><a class="menu-item" href="/posts/" title="View my blogs">Posts</a><div class="menu-item"><a href="javascript:void(0);" class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single" data-toc="enable"><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://codethenaoday.github.io/images/inversion-of-control-ioc/featuredImage.jfif"
+        data-srcset="https://codethenaoday.github.io/images/inversion-of-control-ioc/featuredImage.jfif, https://codethenaoday.github.io/images/inversion-of-control-ioc/featuredImage.jfif 1.5x, https://codethenaoday.github.io/images/inversion-of-control-ioc/featuredImage.jfif 2x"
+        data-sizes="auto"
+        alt="https://codethenaoday.github.io/images/inversion-of-control-ioc/featuredImage.jfif"
+        title="https://codethenaoday.github.io/images/inversion-of-control-ioc/featuredImage.jfif" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">INVERSION OF CONTROL (IoC)</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="https://codethenaoday.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>codethenaoday</a></span></div>
+                <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Dec 19, 2021">Dec 19, 2021</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;445 words</span>&nbsp;
+                    <span><i class="far fa-clock fa-fw"></i>&nbsp;3 minutes</span>&nbsp;</div>
+            </div>
+            
+            <hr><div class="details toc" id="toc-static"  data-kept="">
+                    <div class="details-summary toc-title">
+                        <span>Contents</span>
+                        <span><i class="details-icon fas fa-angle-right"></i></span>
+                    </div>
+                    <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#inversion-of-control-ioc">INVERSION OF CONTROL (IoC)</a></li>
+  </ul>
+</nav></div>
+                </div><div class="content" id="content"><h2 id="inversion-of-control-ioc">INVERSION OF CONTROL (IoC)</h2>
+<p>Ở <a href="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" target="_blank" rel="noopener noreffer">bài trước</a> chúng ta đã giải quyết được vấn đề các module liên kết chặt chẽ với nhau khó sửa đổi rồi. Nhưng lại nảy sinh ra một vấn đề nữa là một chương trình đâu chỉ có một module mà còn có rất nhiều module khác cần inject nữa (cuộc sống SugarBaby đâu chỉ cần mỗi daddy đúng không nào). Nghĩ đến cảnh một module có hàng tá dependency mà bạn phải tự inject từng cái đã mệt rồi , quản lý code lúc này càng mệt hơn. Lúc này chỉ muốn ước một ai đó kề cạnh bên mình để yêu thương à nhầm để làm mấy việc này.</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://codethenaoday.github.io/images/inversion-of-control-ioc/hinh-1.jpg"
+        data-srcset="https://codethenaoday.github.io/images/inversion-of-control-ioc/hinh-1.jpg, https://codethenaoday.github.io/images/inversion-of-control-ioc/hinh-1.jpg 1.5x, https://codethenaoday.github.io/images/inversion-of-control-ioc/hinh-1.jpg 2x"
+        data-sizes="auto"
+        alt="https://codethenaoday.github.io/images/inversion-of-control-ioc/hinh-1.jpg"
+        title="Alt text" /></p>
+<p>Rồi cái gì đến cũng sẽ đến có vấn thì sẽ có cách giải quyết và các giải quyết ở đây chính là IoC.</p>
+<p>IoC là một nguyên lý thiết kế được tạo ra để code tuân thủ theo Dependency Inversion principle. IoC nhằm mục đích đơn giản hóa quá trình tạo đối tượng và liên kết giữa chúng, bằng cách tuân theo nguyên tắc: Không tạo đối tượng, chỉ mô tả cách chúng sẽ được tạo ra. Một vài mô hình được sử dụng để triển khai Inversion of Control (IoC) như: Service Locator, Events hay <strong>DI (Dependency Injection)</strong>. Và có nhiều framework ra đời hỗ trợ IoC, điển hình như Spring cho Java hoặc Angular của JavaScript, entity framework cho C#,…</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://codethenaoday.github.io/images/inversion-of-control-ioc/hinh-2.png"
+        data-srcset="https://codethenaoday.github.io/images/inversion-of-control-ioc/hinh-2.png, https://codethenaoday.github.io/images/inversion-of-control-ioc/hinh-2.png 1.5x, https://codethenaoday.github.io/images/inversion-of-control-ioc/hinh-2.png 2x"
+        data-sizes="auto"
+        alt="https://codethenaoday.github.io/images/inversion-of-control-ioc/hinh-2.png"
+        title="Alt text" /></p>
+<p>Mình sẽ lấy ví dụ IoC Spring sử dụng DI cho dễ hình dung nhé. DI hiểu đơn giản tức là bây giờ chúng ta sẽ định nghĩa, mô tả trước các dependency rồi cho một cái gì đó( ở đây là IoC container ) chứa và cho framework quản lý. Khi nào khởi tạo một class mà cần dependency thì sẽ tìm trong container và inject vào class đây. Ví dụ:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-Java" data-lang="Java"><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">SugarDaddy</span><span class="o">{</span> <span class="o">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DaddyA</span> <span class="kd">implements</span> <span class="n">Sugar</span> <span class="n">Daddy</span> <span class="o">{}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DaddyB</span> <span class="kd">implements</span> <span class="n">Sugar</span> <span class="n">Daddy</span> <span class="o">{}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Daddyc</span> <span class="kd">implements</span> <span class="n">Sugar</span> <span class="n">Daddy</span> <span class="o">{}</span>
+
+<span class="kd">class</span> <span class="nc">SugarBaby</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="n">SugarDaddy</span> <span class="n">daddy</span><span class="o">;</span>
+
+  <span class="kd">public</span> <span class="nf">SugarBaby</span> <span class="o">(</span><span class="n">Sugar</span> <span class="n">Daddy</span> <span class="n">daddy</span><span class="o">)</span> <span class="o">{</span>
+  <span class="k">this</span><span class="o">.</span> <span class="n">daddy</span> <span class="o">=</span> <span class="n">daddy</span><span class="o">;</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+  <span class="n">DaddyA</span> <span class="n">daddyA</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaddyA</span><span class="o">();</span>
+  <span class="n">DaddyA</span> <span class="n">daddyB</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DaddyB</span><span class="o">();</span>
+  <span class="n">DaddyA</span> <span class="n">daddyC</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Daddyc</span><span class="o">();</span>
+
+  <span class="n">SugarBaby</span> <span class="n">baby</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SugarBaby</span> <span class="o">(</span><span class="n">daddyB</span><span class="o">);</span>
+
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Mỗi class được đánh dấu bởi một Annotation là <code>@Component</code> nó sẽ hiểu là đây là một dependency nó sẽ tạo và sẽ đưa và  IoC container, còn <code>@Autowired</code> sẽ làm nhiệm vụ tìm module tương ứng (tạo từ trước) và inject vào</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info"><div class="post-info-line"><div class="post-info-mod">
+                <span>Updated on Dec 18, 2021</span>
+            </div><div class="post-info-mod"></div>
+        </div><div class="post-info-share">
+            <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://codethenaoday.github.io/posts/inversion-of-control-ioc/" data-title="INVERSION OF CONTROL (IoC)"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://codethenaoday.github.io/posts/inversion-of-control-ioc/"><i class="fab fa-facebook-square fa-fw"></i></a></span>
+        </div></div><div class="post-nav"><a href="/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" class="prev" rel="prev" title="HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
+            <a href="/posts/con-gai-voi-it/" class="next" rel="next" title="CON GÁI VỚI IT">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
+</div><div id="comments" class="single-card"><div id="fb-root"></div>
+            <div
+                class="fb-comments"
+                data-href="https://codethenaoday.github.io/posts/inversion-of-control-ioc/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript></div></article></div>
+            </main>
+            <footer class="footer"><div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://codethenaoday.github.io">codethenaoday</a></span></div>
+</div>
+</footer>
+        </div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-chevron-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment-alt fa-fw"></i>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"><script src="https://connect.facebook.net/vi/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=673370387004208&amp;autoLogAppEvents=1" defer></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/js/lightgallery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.1/sharer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"cd codethenaoday","id-2":"cd codethenaoday"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":null,"speed":null}};</script><script src="/js/theme.min.js"></script></body></html>
