@@ -7,7 +7,7 @@
         <title>GIỚI THIỆU CLEAN CODE - </title><meta name="description" content=""><meta property="og:title" content="GIỚI THIỆU CLEAN CODE" />
 <meta property="og:description" content="Lý do tôi biết đến CLEAN CODE Sau khi đọc review sách Clean Code: A Handbook of Agile Software Craftsmanship của tác giả Robert C.Martin Blog tại blog toidicodedao mình bắt cũng bắt đầu tìm hiểu và đọc cuốn sách này và học các để biết code nào là “xịn” code nào là “rởm”.Và trong series này mình sẽ chia sẻ tóm tắt những gì mình đọc và học được từ cuốn sách này ." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://codethenaoday.github.io/posts/gioi-thieu-clean-code/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://echdicode.github.io/posts/gioi-thieu-clean-code/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-10-16T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-10-16T00:00:00+00:00" />
 
@@ -17,7 +17,7 @@
 <meta name="application-name" content="">
 <meta name="apple-mobile-web-app-title" content=""><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://codethenaoday.github.io/posts/gioi-thieu-clean-code/" /><link rel="prev" href="https://codethenaoday.github.io/posts/tim-hieu-ve-lap-trinh-oop/" /><link rel="next" href="https://codethenaoday.github.io/posts/cach-dat-ten-co-nghia/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://echdicode.github.io/posts/gioi-thieu-clean-code/" /><link rel="prev" href="https://echdicode.github.io/posts/tim-hieu-ve-lap-trinh-oop/" /><link rel="next" href="https://echdicode.github.io/posts/cach-dat-ten-co-nghia/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -25,22 +25,18 @@
         "inLanguage": "vi",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/codethenaoday.github.io\/posts\/gioi-thieu-clean-code\/"
+            "@id": "https:\/\/echdicode.github.io\/posts\/gioi-thieu-clean-code\/"
         },"genre": "posts","wordcount":  616 ,
-        "url": "https:\/\/codethenaoday.github.io\/posts\/gioi-thieu-clean-code\/","datePublished": "2021-10-16T00:00:00+00:00","dateModified": "2021-10-16T00:00:00+00:00","publisher": {
+        "url": "https:\/\/echdicode.github.io\/posts\/gioi-thieu-clean-code\/","datePublished": "2021-10-16T00:00:00+00:00","dateModified": "2021-10-16T00:00:00+00:00","publisher": {
             "@type": "Organization",
-            "name": "codethenaoday"},"author": {
+            "name": "echdicode"},"author": {
                 "@type": "Person",
-                "name": "codethenaoday"
+                "name": "echdicode"
             },"description": ""
     }
     </script></head><body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://codethenaoday.github.io/images/about/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="https://codethenaoday.github.io/images/about/favicon_io/site.webmanifest">
     <div class="header-wrapper">
         <div class="header-title">
             <a href="/" title=""><span class="header-title-pre"><i class='fa fa-terminal'> </i> </span><span id="id-1" class="typeit"></span></a>
@@ -74,12 +70,12 @@
         </div><article class="page single" data-toc="enable"><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://codethenaoday.github.io/images/gioi-thieu-clean-code/featuredImage.jfif"
-        data-srcset="https://codethenaoday.github.io/images/gioi-thieu-clean-code/featuredImage.jfif, https://codethenaoday.github.io/images/gioi-thieu-clean-code/featuredImage.jfif 1.5x, https://codethenaoday.github.io/images/gioi-thieu-clean-code/featuredImage.jfif 2x"
+        data-src="https://echdicode.github.io/images/gioi-thieu-clean-code/featuredImage.jfif"
+        data-srcset="https://echdicode.github.io/images/gioi-thieu-clean-code/featuredImage.jfif, https://echdicode.github.io/images/gioi-thieu-clean-code/featuredImage.jfif 1.5x, https://echdicode.github.io/images/gioi-thieu-clean-code/featuredImage.jfif 2x"
         data-sizes="auto"
-        alt="https://codethenaoday.github.io/images/gioi-thieu-clean-code/featuredImage.jfif"
-        title="https://codethenaoday.github.io/images/gioi-thieu-clean-code/featuredImage.jfif" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">GIỚI THIỆU CLEAN CODE</h2><div class="post-meta">
-                <div class="post-meta-line"><span class="post-author"><a href="https://codethenaoday.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>codethenaoday</a></span></div>
+        alt="https://echdicode.github.io/images/gioi-thieu-clean-code/featuredImage.jfif"
+        title="https://echdicode.github.io/images/gioi-thieu-clean-code/featuredImage.jfif" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">GIỚI THIỆU CLEAN CODE</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="https://echdicode.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>echdicode</a></span></div>
                 <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Oct 16, 2021">Oct 16, 2021</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;616 words</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;3 minutes</span>&nbsp;</div>
             </div>
@@ -102,10 +98,10 @@
 <img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-1.png"
-        data-srcset="https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-1.png, https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-1.png 1.5x, https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-1.png 2x"
+        data-src="https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-1.png"
+        data-srcset="https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-1.png, https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-1.png 1.5x, https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-1.png 2x"
         data-sizes="auto"
-        alt="https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-1.png"
+        alt="https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-1.png"
         title="Alt text " /></p>
 <p>Tác hại của việc viết code “rởm” chắc chắn người lập trình viên nào cũng sẽ trải qua thôi. Bản thân mình đây mới là sinh viên học nhập môn ngôn ngữ lập trình viết vài dòng code giải vài bài toán đơn giản cũng bị dính trưởng huống gì mấy cái project to tổ bố. Nhiều lúc lâu lâu mình đọc lại code mình hay code của mấy bạn khác còn mãi mới hình dung được là đang viết cái gì đó là một tác hại của việc viết code “rởm”.Trong cuốn sách có một đoạn:</p>
 <blockquote>
@@ -115,10 +111,10 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-2.png"
-        data-srcset="https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-2.png, https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-2.png 1.5x, https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-2.png 2x"
+        data-src="https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-2.png"
+        data-srcset="https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-2.png, https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-2.png 1.5x, https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-2.png 2x"
         data-sizes="auto"
-        alt="https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-2.png"
+        alt="https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-2.png"
         title="Alt text" /></p>
 <p>Vậy thì viết code sạch là cái gì ? ở đây mình sẽ trích một số định nghĩa về code sạch của một số lập trình viên nổi tiếng thế giới.</p>
 <blockquote>
@@ -137,30 +133,30 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-3.png"
-        data-srcset="https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-3.png, https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-3.png 1.5x, https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-3.png 2x"
+        data-src="https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-3.png"
+        data-srcset="https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-3.png, https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-3.png 1.5x, https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-3.png 2x"
         data-sizes="auto"
-        alt="https://codethenaoday.github.io/images/gioi-thieu-clean-code/hinh-3.png"
+        alt="https://echdicode.github.io/images/gioi-thieu-clean-code/hinh-3.png"
         title="Alt text" /></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-line"><div class="post-info-mod">
                 <span>Updated on Oct 16, 2021</span>
             </div><div class="post-info-mod"></div>
         </div><div class="post-info-share">
-            <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://codethenaoday.github.io/posts/gioi-thieu-clean-code/" data-title="GIỚI THIỆU CLEAN CODE"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://codethenaoday.github.io/posts/gioi-thieu-clean-code/"><i class="fab fa-facebook-square fa-fw"></i></a></span>
+            <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://echdicode.github.io/posts/gioi-thieu-clean-code/" data-title="GIỚI THIỆU CLEAN CODE"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://echdicode.github.io/posts/gioi-thieu-clean-code/"><i class="fab fa-facebook-square fa-fw"></i></a></span>
         </div></div><div class="post-nav"><a href="/posts/tim-hieu-ve-lap-trinh-oop/" class="prev" rel="prev" title="TÌM HIỂU VỀ LẬP TRÌNH OOP"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
             <a href="/posts/cach-dat-ten-co-nghia/" class="next" rel="next" title="CÁCH ĐẶT TÊN CÓ NGHĨA">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
 </div><div id="comments" class="single-card"><div id="fb-root"></div>
             <div
                 class="fb-comments"
-                data-href="https://codethenaoday.github.io/posts/gioi-thieu-clean-code/"
+                data-href="https://echdicode.github.io/posts/gioi-thieu-clean-code/"
                 data-width="100%"
                 data-numposts="10"
             ></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
             </noscript></div></article></div>
             </main>
-            <footer class="footer"><div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://codethenaoday.github.io">codethenaoday</a></span></div>
+            <footer class="footer"><div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://echdicode.github.io">echdicode</a></span></div>
 </div>
 </footer>
         </div>
@@ -169,4 +165,4 @@
                 <i class="fas fa-chevron-up fa-fw"></i>
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment-alt fa-fw"></i>
-            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"><script src="https://connect.facebook.net/vi/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=673370387004208&amp;autoLogAppEvents=1" defer></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/js/lightgallery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.1/sharer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"cd codethenaoday","id-2":"cd codethenaoday"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":null,"speed":null}};</script><script src="/js/theme.min.js"></script></body></html>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"><script src="https://connect.facebook.net/vi/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=673370387004208&amp;autoLogAppEvents=1" defer></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/js/lightgallery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.1/sharer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"cd echdicode","id-2":"cd echdicode"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":null,"speed":null}};</script><script src="/js/theme.min.js"></script></body></html>

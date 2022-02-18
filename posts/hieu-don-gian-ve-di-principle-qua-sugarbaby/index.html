@@ -8,7 +8,7 @@
 <meta property="og:description" content="Dependency inversion principle(DI principle)? Trước khi đi vào giải thích thì các bạn hãy xem ví dụ sau:
 1 2 3 4 5 6 7 8 9  class DaddyA{} class DaddyB{} class DaddyC{} class sugarBaby{ private DaddyA daddyA; public sugarBaby(){ daddyA=new DaddyA(); } }   Như các bạn đã biết sugarBaby mỗi tháng cần DaddyA chu cấp và bao bọc để có một cuộc sống mang hơi ấm “gia đình”." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://echdicode.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-12-18T00:00:00+00:00" />
 <meta property="article:modified_time" content="2021-12-18T00:00:00+00:00" />
 
@@ -19,7 +19,7 @@
 <meta name="application-name" content="">
 <meta name="apple-mobile-web-app-title" content=""><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" /><link rel="prev" href="https://codethenaoday.github.io/posts/gioi-thieu-spring-boot/" /><link rel="next" href="https://codethenaoday.github.io/posts/inversion-of-control-ioc/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://echdicode.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" /><link rel="prev" href="https://echdicode.github.io/posts/gioi-thieu-spring-boot/" /><link rel="next" href="https://echdicode.github.io/posts/inversion-of-control-ioc/" /><link rel="stylesheet" href="/css/page.min.css"><link rel="stylesheet" href="/css/home.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -27,22 +27,18 @@
         "inLanguage": "vi",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/codethenaoday.github.io\/posts\/hieu-don-gian-ve-di-principle-qua-sugarbaby\/"
+            "@id": "https:\/\/echdicode.github.io\/posts\/hieu-don-gian-ve-di-principle-qua-sugarbaby\/"
         },"genre": "posts","wordcount":  347 ,
-        "url": "https:\/\/codethenaoday.github.io\/posts\/hieu-don-gian-ve-di-principle-qua-sugarbaby\/","datePublished": "2021-12-18T00:00:00+00:00","dateModified": "2021-12-18T00:00:00+00:00","publisher": {
+        "url": "https:\/\/echdicode.github.io\/posts\/hieu-don-gian-ve-di-principle-qua-sugarbaby\/","datePublished": "2021-12-18T00:00:00+00:00","dateModified": "2021-12-18T00:00:00+00:00","publisher": {
             "@type": "Organization",
-            "name": "codethenaoday"},"author": {
+            "name": "echdicode"},"author": {
                 "@type": "Person",
-                "name": "codethenaoday"
+                "name": "echdicode"
             },"description": ""
     }
     </script></head><body data-header-desktop="auto" data-header-mobile="auto"><script>(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
 
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://codethenaoday.github.io/images/about/favicon_io/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://codethenaoday.github.io/images/about/favicon_io/favicon-16x16.png">
-    <link rel="manifest" href="https://codethenaoday.github.io/images/about/favicon_io/site.webmanifest">
     <div class="header-wrapper">
         <div class="header-title">
             <a href="/" title=""><span class="header-title-pre"><i class='fa fa-terminal'> </i> </span><span id="id-1" class="typeit"></span></a>
@@ -76,12 +72,12 @@
         </div><article class="page single" data-toc="enable"><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png"
-        data-srcset="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png, https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png 1.5x, https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png 2x"
+        data-src="https://echdicode.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png"
+        data-srcset="https://echdicode.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png, https://echdicode.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png 1.5x, https://echdicode.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png 2x"
         data-sizes="auto"
-        alt="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png"
-        title="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY</h2><div class="post-meta">
-                <div class="post-meta-line"><span class="post-author"><a href="https://codethenaoday.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>codethenaoday</a></span></div>
+        alt="https://echdicode.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png"
+        title="https://echdicode.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/featuredImage.png" /></div><div class="single-card" data-image="true"><h2 class="single-title animated flipInX">HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY</h2><div class="post-meta">
+                <div class="post-meta-line"><span class="post-author"><a href="https://echdicode.github.io" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw"></i>echdicode</a></span></div>
                 <div class="post-meta-line"><span><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="Dec 18, 2021">Dec 18, 2021</time></span>&nbsp;<span><i class="fas fa-pencil-alt fa-fw"></i>&nbsp;347 words</span>&nbsp;
                     <span><i class="far fa-clock fa-fw"></i>&nbsp;2 minutes</span>&nbsp;</div>
             </div>
@@ -170,30 +166,30 @@
 <p><img
         class="lazyload"
         src="/svg/loading.min.svg"
-        data-src="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg"
-        data-srcset="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg, https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg 1.5x, https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg 2x"
+        data-src="https://echdicode.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg"
+        data-srcset="https://echdicode.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg, https://echdicode.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg 1.5x, https://echdicode.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg 2x"
         data-sizes="auto"
-        alt="https://codethenaoday.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg"
+        alt="https://echdicode.github.io/images/hieu-don-gian-ve-di-principle-qua-sugarbaby/hinh-1.jpg"
         title="Alt text" /></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info"><div class="post-info-line"><div class="post-info-mod">
                 <span>Updated on Dec 18, 2021</span>
             </div><div class="post-info-mod"></div>
         </div><div class="post-info-share">
-            <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" data-title="HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/"><i class="fab fa-facebook-square fa-fw"></i></a></span>
+            <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://echdicode.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/" data-title="HIỂU ĐƠN GIẢN VỀ DI PRINCIPLE QUA SUGARBABY"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://echdicode.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/"><i class="fab fa-facebook-square fa-fw"></i></a></span>
         </div></div><div class="post-nav"><a href="/posts/gioi-thieu-spring-boot/" class="prev" rel="prev" title="GIỚI THIỆU SPRING BOOT"><i class="fas fa-angle-left fa-fw"></i>Previous Post</a>
             <a href="/posts/inversion-of-control-ioc/" class="next" rel="next" title="INVERSION OF CONTROL (IoC)">Next Post<i class="fas fa-angle-right fa-fw"></i></a></div></div>
 </div><div id="comments" class="single-card"><div id="fb-root"></div>
             <div
                 class="fb-comments"
-                data-href="https://codethenaoday.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/"
+                data-href="https://echdicode.github.io/posts/hieu-don-gian-ve-di-principle-qua-sugarbaby/"
                 data-width="100%"
                 data-numposts="10"
             ></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
             </noscript></div></article></div>
             </main>
-            <footer class="footer"><div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://codethenaoday.github.io">codethenaoday</a></span></div>
+            <footer class="footer"><div class="footer-container"><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://echdicode.github.io">echdicode</a></span></div>
 </div>
 </footer>
         </div>
@@ -202,4 +198,4 @@
                 <i class="fas fa-chevron-up fa-fw"></i>
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment-alt fa-fw"></i>
-            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"><script src="https://connect.facebook.net/vi/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=673370387004208&amp;autoLogAppEvents=1" defer></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/js/lightgallery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.1/sharer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"cd codethenaoday","id-2":"cd codethenaoday"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":null,"speed":null}};</script><script src="/js/theme.min.js"></script></body></html>
+            </a></div><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css"><script src="https://connect.facebook.net/vi/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=673370387004208&amp;autoLogAppEvents=1" defer></script><script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lightgallery.js@1.4.1-beta.0/dist/js/lightgallery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-thumbnail.js@1.2.0/dist/lg-thumbnail.min.js"></script><script src="https://cdn.jsdelivr.net/npm/lg-zoom.js@1.3.0/dist/lg-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script><script src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.1/sharer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js"></script><script src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js"></script><script>window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"data":{"id-1":"cd echdicode","id-2":"cd echdicode"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"typeit":{"cursorChar":null,"cursorSpeed":null,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":null,"speed":null}};</script><script src="/js/theme.min.js"></script></body></html>
